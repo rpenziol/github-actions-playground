@@ -27,3 +27,13 @@ jobs:
       - name: Print time
         run: python3 -c 'import datetime; print(datetime.datetime.now())'
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker container
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
