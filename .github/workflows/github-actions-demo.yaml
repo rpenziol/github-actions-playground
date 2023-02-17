@@ -22,8 +22,8 @@ jobs:
     container:
       image: python
     steps:
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - name: Named step
+        run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Print time
-        run: |
-          python3 -c 'import datetime; print(datetime.datetime.now())'
+        run: python3 -c 'import datetime; print(datetime.datetime.now())'
       - run: echo "🍏 This job's status is ${{ job.status }}."
